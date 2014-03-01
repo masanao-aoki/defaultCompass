@@ -1,0 +1,56 @@
+@charset "utf-8";
+.sprite.css1, .sprite.css2, .sprite.css3 {
+  display: block;
+  background-image: url('/html/img/sprite-s943cd9c132.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 80px 245px;
+  -moz-background-size: 80px 245px;
+  -o-background-size: 80px 245px;
+  background-size: 80px 245px;
+}
+
+.sprite.css1 {
+  background-position: 0 -165px;
+  width: 80px;
+  height: 80px;
+}
+
+.sprite.css2 {
+  background-position: 0 -83px;
+  width: 80px;
+  height: 80px;
+}
+
+.sprite.css3 {
+  background-position: 0 0;
+  width: 80px;
+  height: 80px;
+}
+
+.sprite2.css1, .sprite2.css2, .sprite2.css3 {
+  display: block;
+  background-image: url('/html/img/sprite2-s7c6e23ec50.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 80px 245px;
+  -moz-background-size: 80px 245px;
+  -o-background-size: 80px 245px;
+  background-size: 80px 245px;
+}
+
+.sprite2.css1 {
+  background-position: 0 -165px;
+  width: 80px;
+  height: 80px;
+}
+
+.sprite2.css2 {
+  background-position: 0 -83px;
+  width: 80px;
+  height: 80px;
+}
+
+.sprite2.css3 {
+  background-position: 0 0;
+  width: 80px;
+  height: 80px;
+}
