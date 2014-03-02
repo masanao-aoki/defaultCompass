@@ -1,4 +1,26 @@
 @charset "utf-8";
+.spriteTest li:nth-child(1) {
+  background-image: url('/html/img/sprite-s943cd9c132.png');
+  -webkit-background-size: 80px 245px;
+  -moz-background-size: 80px 245px;
+  -o-background-size: 80px 245px;
+  background-size: 80px 245px;
+  background-position: 0 -83px;
+  width: 80px;
+  height: 80px;
+}
+
+.spriteTest li:nth-child(2) {
+  background-image: url('/html/img/sprite-s943cd9c132.png');
+  -webkit-background-size: 80px 245px;
+  -moz-background-size: 80px 245px;
+  -o-background-size: 80px 245px;
+  background-size: 80px 245px;
+  background-position: 0 0;
+  width: 80px;
+  height: 80px;
+}
+
 /*----------------------------------------
 	Selectors 書き方
 ----------------------------------------*/

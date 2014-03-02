@@ -2,6 +2,14 @@
 
 @import "import";
 
+$map:sprite-map("sprite/*.png", $spacing: 5px);
+.spriteTest li:nth-child(1) {
+	@include sprite-info($map,css2);
+}
+.spriteTest li:nth-child(2) {
+	@include sprite-info($map,css3);
+}
+
 /*----------------------------------------
 	Selectors 書き方
 ----------------------------------------*/

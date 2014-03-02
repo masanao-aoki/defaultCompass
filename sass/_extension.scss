@@ -42,13 +42,14 @@ $imgHeight: ();
 
 //画像の幅をとってきてくれるisRetinaがtrueの場合は2で割った数を返す
 @function image-info($img,$name,$isRetina: false) {
+	$retinaSuport: if($isRetina, 2, 1);
 	$width : ();
 	$height : ();
 	$imgWidth: ();
 	$imgHeight: ();
 	@each $i in $img {
-		$width: if($isRetina,round(image-width($i)/2),image-width($i));
-		$height: if($isRetina,round(image-height($i)/2),image-height($i));
+		$width: image-width($i) / $retinaSuport;
+		$height: image-height($i) / $retinaSuport;
 		
 		$imgWidth: append($imgWidth, $width);
 		$imgHeight:  append($imgHeight, $height);
@@ -88,7 +89,7 @@ $imgHeight: ();
 	}
 }
 
-@mixin spriteInfo($map, $name,$retina : true,$doubleClass : true) {
+@mixin sprite-info($map, $name,$retina : true,$doubleClass : true) {
 	background-image: image-url(sprite-path($map), false, false);
 	@include background-size(nth(spriteSize($map,$name,$retina),1) nth(spriteSize($map,$name,$retina),2));
 	background-position: spritePosition($map,$name,$retina);
