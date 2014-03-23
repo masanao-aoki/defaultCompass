@@ -1,48 +1,72 @@
 @charset "utf-8";
-// ============================================================
-// extension
-// ============================================================
-// ----------------------------------------------------------------------
-// 画像周り
-// ----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+// img
+//----------------------------------------------------------------------
+//	background-retina
+//	画像をRetina対応にする
+//
+//	$img: config.rb images_dirで指定した画像（複数画像を指定できます。）
+//	$widthFixed: 画像タグのサイズいっぱいに指定してテキストを消したいとき true
+//	$value: 一つ目の画像をどういう配置にするか（複数指定してある場合は ("0 0 no-repeat","left top repeat")）
 $imgWidth: ();
 $imgHeight: ();
-
-@mixin background-retina($img,$widthFixed : true,$value : "0 0 no-repeat") {
+@mixin background-fit($img,$widthFixed: true,$value: 0 0 no-repeat,$important: '',$retina: $isRetina) {
+	$retinaSuport: if($retina, 2, 1);
 	$imgList : ();
 	$widthHeightList : ();
 	$width : ();
 	$height : ();
 	$imgWidth: ();
 	$imgHeight: ();
+	$num: 0;
 
 	@each $i in $img {
-		$comma : if(index($img,$i) == length($img),'',',');
-		$width: round(image-width($i)/2);
-		$height: round(image-height($i)/2);
+		$isFile: isFile($images_dir + $i) == 'true';
+		$num: $num + 1;
 		
-		$imgList: append($imgList, image-url($i) + ' ' + nth($value,index($img,$i)) + $comma);
-		$widthHeightList: append($widthHeightList, unquote($width + ' ' + $height) + $comma);
+		$width: '';
+		$height: '';
+		$image: '';
 		
-		$imgWidth: append($imgWidth, $width);
-		$imgHeight:  append($imgHeight, $height);
+		@if $isFile {
+			$width: round(image-width($i) / $retinaSuport);
+			$height: round(image-height($i) / $retinaSuport);
+			$image: image-url($i);
+		} @else {
+			$width: auto;
+			$height: auto;
+			$image: $i;
+		}
+		
+		$val: if(length($img) == $num and $important != '',append(unquote(nth($value,$num)),$important),unquote(nth($value,$num)));
+		$whval: if(length($img) == $num and $important != '',append(join($width,$height),$important),join($width,$height));
+		
+		$imgList: append($imgList, join($image,$val),comma);
+		$widthHeightList: append($widthHeightList, $whval,comma);
+		
+		$imgWidth: if(length($img) == 1,$width,append($imgWidth, $width));
+		$imgHeight:  if(length($img) == 1,$height,append($imgHeight, $height));
 	}
-	background: $imgList;
+	
+	@include background($imgList);
 	@if $widthFixed and length($img) < 2 {
 		text-indent: -9999px;
 		overflow: hidden;
-		width: $width;
-		height: $height;
-		@include background-size(100% 100%);
+		width: if($important == '', $width,  unquote($width + ' ' + $important));
+		height: if($important == '', $height, unquote($height + ' ' + $important));
 	}
-	@else {
-		@include background-size($widthHeightList);
-	}
+	@include background-size($widthHeightList);
 }
 
-//画像の幅をとってきてくれるisRetinaがtrueの場合は2で割った数を返す
-@function image-info($img,$name,$isRetina: false) {
-	$retinaSuport: if($isRetina, 2, 1);
+//	image-info
+//	画像の幅をとってきてくれるisRetinaがtrueの場合は2で割った数を返す
+//
+//	$img: config.rb images_dirで指定した画像（複数画像を指定できます。）
+//	$name: width or height
+//	$retina: true or false
+@function image-info($img,$name,$retina: $isRetina) {
+	$retinaSuport: if($retina, 2, 1);
 	$width : ();
 	$height : ();
 	$imgWidth: ();
@@ -58,46 +82,61 @@ $imgHeight: ();
 	@return if($name == 'width',$imgWidth,$imgHeight)
 }
 
-// ----------------------------------------------------------------------
-// sprite
-// ----------------------------------------------------------------------
-@mixin spriteInfo2($map, $sprite-names,$retina : true,$doubleClass : true) {
-	$widthHeightList : ();
-	$imgWidth: ();
-	$imgHeight: ();
-	$bgPosition : ();
-	
-	@each $name in $sprite-names {
-		$comma : if(index($sprite-names,$name) == length($sprite-names),'',',');
-		$width : nth(spriteSize($map,$name,$retina),1);
-		$height : nth(spriteSize($map,$name,$retina),2);
-			
-		$widthHeightList: append($widthHeightList, unquote($width + ' ' + $height) + $comma);
-		
-		$imgWidth: append($imgWidth, $width);
-		$imgHeight:  append($imgHeight, $height);
-		$bgPosition:  append($bgPosition, unquote(spritePosition($map,$name,$retina) + $comma));
-	}
 
-	background-image: image-url(sprite-path($map), false, false);
-	@include background-size($widthHeightList);
-	background-position: $bgPosition;
-	
-	@if(length($sprite-names) < 2){
-		width: nth(spriteSize($map,$sprite-names,$retina),3);
-		height: nth(spriteSize($map,$sprite-names,$retina),4);
+//	half-image-width
+//	画像の半分の値を返す（複数画像を配列で指定可能）
+@function half-image-width($img) {
+	$imgWidth: ();
+	@each $i in $img {
+		$width: image-width($i) / 2;
+		
+		$imgWidth: if(length($img) == 1,$width,append($imgWidth, $width));
 	}
+	
+	@return $imgWidth
 }
 
-@mixin sprite-info($map, $name,$retina : true,$doubleClass : true) {
+//	half-image-height
+//	画像の半分の値を返す（複数画像を配列で指定可能）
+@function half-image-height($img) {
+	$imgHeight: ();
+	@each $i in $img {
+		$height: image-height($i) / 2;
+		
+		$imgHeight:  if(length($img) == 1,$height,append($imgHeight, $height));
+	}
+	
+	@return $imgHeight
+}
+
+//----------------------------------------------------------------------
+// sprite
+//----------------------------------------------------------------------
+//	sprite-info
+//	スプライト画像のサイズとポジションを設定する
+//
+//	$map: スプライト画像
+//	$name: スプライト画像内のスプライト化する前の画像名
+//	$retina: true or false
+@mixin sprite-info($map, $name, $size: true, $retina: $isRetina) {
 	background-image: image-url(sprite-path($map), false, false);
 	@include background-size(nth(spriteSize($map,$name,$retina),1) nth(spriteSize($map,$name,$retina),2));
 	background-position: spritePosition($map,$name,$retina);
-	width: nth(spriteSize($map,$name,$retina),3);
-	height: nth(spriteSize($map,$name,$retina),4);
+	
+	@if($size) {		
+		width: nth(spriteSize($map,$name,$retina),3);
+		height: nth(spriteSize($map,$name,$retina),4);
+	}
 }
 
-@function spriteSize($map, $name,$retina : true) {
+//	spriteSize
+//	スプライト画像のサイズとその中の個別画像のサイズを配列で返す
+//
+//	$map: スプライト画像
+//	$name: スプライト画像内のスプライト化する前の画像名
+//	$retina: true or false
+// @return {Array} [スプライト画像の横,スプライト画像の高さ,個別画像の横,個別画像の高さ]
+@function spriteSize($map, $name,$retina: $isRetina) {
 	$retinaSuport: if($retina, 2, 1);
 	$map : nth($map,1);
 	$spriteWidth: round(image-width(sprite-path($map)) / $retinaSuport);
@@ -111,7 +150,14 @@ $imgHeight: ();
 	@return ($spriteWidth,$spriteHeight,$imgWidth,$imgHeight);
 }
 
-@function spritePosition($map, $name,$retina : true) {
+//	spritePosition
+// スプライト画像のbackground-position
+//
+//	$map: スプライト画像
+//	$name: スプライト画像内のスプライト化する前の画像名
+//	$retina: true or false
+// @return {Array} [スプライト画像のy,スプライト画像のx]
+@function spritePosition($map, $name,$retina: $isRetina) {
 	$retinaSuport: if($retina, 2, 1);
 	$map : nth($map,1);
 
@@ -121,10 +167,11 @@ $imgHeight: ();
 	@return $xpos $ypos;
 }
 
-// ----------------------------------------------------------------------
+//----------------------------------------------------------------------
 // css3
-// ----------------------------------------------------------------------
-// 最大高さ min-height
+//----------------------------------------------------------------------
+// min_height
+// 最大の高さ IE6にも対応させたい場合
 @mixin min_height($value : 1%) {
 	min-height: $value;
 	@if $legacy-support-for-ie6 {
@@ -132,7 +179,8 @@ $imgHeight: ();
 	}
 }
 
-// IE6,IE7用 inline-block
+// inline-block
+// IE6,IE7用 にinline-blockを実装する場合
 @mixin inline-block {
 	display: inline-block;
 	@if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
@@ -141,7 +189,8 @@ $imgHeight: ();
 	}
 }
 
-// 同じテキストシャドウ 繰り返し
+//	text-shadow-repeat
+//	同じテキストシャドウを繰り返したい場合
 $text-shadowList: ' ';
 @mixin text-shadow-repeat($value : 0 0 1px rgba(0,0,0,0.3),$num : 1) {
 	$text-shadowList : $value;
@@ -151,7 +200,8 @@ $text-shadowList: ' ';
 	text-shadow: $text-shadowList;
 }
 
-// 同じボックスシャドウ 繰り返し
+//	box-shadow-repeat
+//	同じボックスシャドウを繰り返したい場合
 $box-shadowList: ' ';
 @mixin box-shadow-repeat($value : 0 0 1px rgba(0,0,0,0.3),$num : 1) {
 	$box-shadowList : $value;
@@ -161,24 +211,9 @@ $box-shadowList: ' ';
 	box-shadow: $box-shadowList;
 }
 
-// ----------------------------------------------------------------------
-// html5
-// ----------------------------------------------------------------------
-@function s($value) {
-	@if $html5 {
-		@return $value
-	}
-	@else if $value == header or $value == footer {
-		@return unquote("div#" + $value)
-	}
-	@else {
-		@return unquote("div." + $value)
-	}
-}
-
-// ----------------------------------------------------------------------
+//----------------------------------------------------------------------
 // font-size
-// ----------------------------------------------------------------------
+//----------------------------------------------------------------------
 $fontSizeDefault: 13;
 $fontSizefz: ' ';
 @function fz($size) {
@@ -194,9 +229,39 @@ $fontSizefz: ' ';
 	}
 }
 
-// ----------------------------------------------------------------------
+@mixin fz($size) {
+    $rag : ($size / $fontSizeDefault) * 100%;
+    $ceil : ceil($rag);
+    $rem_num : ($size / $fontSizeDefault);
+    $rem : ceil-decimal($rem_num, 2);
+    font-size: #{$ceil};
+    font-size: #{$rem}rem;
+}
+
+
+//----------------------------------------------------------------------
+// ratio 黄金比 白銀比の計算
+//----------------------------------------------------------------------
+
+//	golden-ratio
+//	黄金比の計算
+// $num: 基準にしたい値
+//	@return {Array}
+@function golden-ratio($num) {
+	@return ($num * 1.618, $num * 0.618)
+}
+
+//	silver-ratio
+//	白銀比の計算
+// $num: 基準にしたい値
+//	@return {Array}
+@function silver-ratio($num) {
+	@return ($num * 1.414, $num * 0.414)
+}
+
+//----------------------------------------------------------------------
 // clearfix
-// ----------------------------------------------------------------------
+//----------------------------------------------------------------------
 @mixin clearfix() {
 /*----------------------------------------
 	clearfix

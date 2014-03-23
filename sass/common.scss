@@ -2,9 +2,9 @@
 
 @import "import";
 
-#{s(header)},
-div#content,
-#{s(footer)} {
+#header,
+#content,
+#footer {
 	margin: 0 auto;
 	text-align: left;
 	width: $baseWidth;
@@ -22,19 +22,19 @@ div#content,
 /*----------------------------------------
 	header
 ----------------------------------------*/
-#{s(header)} {
+#header {
 }
 
 /*----------------------------------------
 	content
 ----------------------------------------*/
-div#content {
+#content {
 }
 
 /*----------------------------------------
 	footer
 ----------------------------------------*/
-#{s(footer)} {
+#footer {
 }
 
 
