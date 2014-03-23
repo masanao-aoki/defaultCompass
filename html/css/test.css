@@ -1,4 +1,27 @@
 @charset "utf-8";
+header {
+  position: relative;
+}
+header:after, header:before {
+  content: '';
+  display: block;
+  background: url('/html/img/sprite/css1.png?1393660371') 0 0 no-repeat;
+  background-size: 80px 80px;
+  width: 50%;
+  height: 80px;
+  position: absolute;
+  -webkit-box-reflect: right;
+}
+header:before {
+  top: 0;
+  left: 0;
+}
+header:after {
+  right: 0;
+  bottom: 0;
+  -webkit-transform: rotate(-180deg);
+}
+
 .spriteTest li:nth-child(1) {
   background-image: url('/html/img/sprite-s943cd9c132.png');
   -webkit-background-size: 80px 245px;

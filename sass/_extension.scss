@@ -9,6 +9,7 @@
 //	$img: config.rb images_dirで指定した画像（複数画像を指定できます。）
 //	$widthFixed: 画像タグのサイズいっぱいに指定してテキストを消したいとき true
 //	$value: 一つ目の画像をどういう配置にするか（複数指定してある場合は ("0 0 no-repeat","left top repeat")）
+//	$retina: true or false
 $imgWidth: ();
 $imgHeight: ();
 @mixin background-fit($img,$widthFixed: true,$value: '0 0 no-repeat',$important: '',$retina: $isRetina) {
@@ -172,7 +173,7 @@ $imgHeight: ();
 //----------------------------------------------------------------------
 // min_height
 // 最大の高さ IE6にも対応させたい場合
-@mixin min_height($value : 1%) {
+@mixin min_height($value: 1%) {
 	min-height: $value;
 	@if $legacy-support-for-ie6 {
 	_height: $value;
@@ -192,7 +193,7 @@ $imgHeight: ();
 //	text-shadow-repeat
 //	同じテキストシャドウを繰り返したい場合
 $text-shadowList: ' ';
-@mixin text-shadow-repeat($value : 0 0 1px rgba(0,0,0,0.3),$num : 1) {
+@mixin text-shadow-repeat($value: 0 0 1px rgba(0,0,0,0.3),$num : 1) {
 	$text-shadowList : $value;
 	@for $i from 1 through $num - 1 {
 		$text-shadowList : unquote($text-shadowList + "," + $value);
@@ -203,12 +204,43 @@ $text-shadowList: ' ';
 //	box-shadow-repeat
 //	同じボックスシャドウを繰り返したい場合
 $box-shadowList: ' ';
-@mixin box-shadow-repeat($value : 0 0 1px rgba(0,0,0,0.3),$num : 1) {
+@mixin box-shadow-repeat($value: 0 0 1px rgba(0,0,0,0.3),$num : 1) {
 	$box-shadowList : $value;
 	@for $i from 1 through $num - 1 {
 		$box-shadowList : unquote($box-shadowList + "," + $value);
 	}
 	box-shadow: $box-shadowList;
+}
+
+//	background-4corners
+//	4つ角に同じ画像を回転・反転させておきたい場合
+@mixin background-4corners($img,$retina: $isRetina) {
+	$retinaSuport: if($retina, 2, 1);
+	$width: round(image-width($img) / $retinaSuport);
+	$height: round(image-height($img) / $retinaSuport);
+	
+	&:after,
+	&:before {
+		content: '';
+		display: block;
+		background: image-url($img) 0 0 no-repeat;
+		background-size: $width $height;
+		width: 50%;
+		height: $height;
+		position: absolute;
+		-webkit-box-reflect: right;
+	}
+	
+	&:before {
+		top: 0;
+		left: 0;
+	}
+	
+	&:after {
+    	right: 0;
+    	bottom: 0;
+		-webkit-transform:rotate(-180deg);
+	}
 }
 
 //----------------------------------------------------------------------
@@ -237,7 +269,6 @@ $fontSizefz: ' ';
     font-size: #{$ceil};
     font-size: #{$rem}rem;
 }
-
 
 //----------------------------------------------------------------------
 // ratio 黄金比 白銀比の計算

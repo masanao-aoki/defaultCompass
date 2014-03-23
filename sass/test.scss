@@ -2,6 +2,11 @@
 
 @import "import";
 
+header {
+	position: relative;
+	@include background-4corners('sprite/css1.png');
+}
+
 $map:sprite-map("sprite/*.png", $spacing: 5px);
 .spriteTest li:nth-child(1) {
 	@include sprite-info($map,css2,true);
