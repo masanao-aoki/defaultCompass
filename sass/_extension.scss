@@ -11,7 +11,7 @@
 //	$value: 一つ目の画像をどういう配置にするか（複数指定してある場合は ("0 0 no-repeat","left top repeat")）
 $imgWidth: ();
 $imgHeight: ();
-@mixin background-fit($img,$widthFixed: true,$value: 0 0 no-repeat,$important: '',$retina: $isRetina) {
+@mixin background-fit($img,$widthFixed: true,$value: '0 0 no-repeat',$important: '',$retina: $isRetina) {
 	$retinaSuport: if($retina, 2, 1);
 	$imgList : ();
 	$widthHeightList : ();
