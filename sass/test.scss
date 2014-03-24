@@ -2,6 +2,28 @@
 
 @import "import";
 
+header {
+	position: relative;
+	@include background-4corners('sprite/css1.png');
+}
+
+$map:sprite-map("sprite/*.png", $spacing: 5px);
+.spriteTest li:nth-child(1) {
+	@include sprite-info($map,css2,true);
+}
+.spriteTest li:nth-child(2) {
+	@include sprite-info($map,css3);
+}
+
+.test10 {
+	content: image-info("img5.gif",width);
+	content: golden-ratio(334);
+	content: silver-ratio(224);
+	@include background-fit(("sprite-s943cd9c132.png","img5.gif",linear-gradient(red,#444)),false,('0 0 no-repeat','0 0 no-repeat','0 0 no-repeat'),!important);
+	width: nth($imgWidth,1);
+	height:  nth($imgHeight,1);
+}
+
 /*----------------------------------------
 	Selectors 書き方
 ----------------------------------------*/
@@ -13,7 +35,8 @@ ul {
 	
 	&[class^=num] li {
 		padding: 0.2em 0.5em;
-		font-size: fz(12px);
+		font-size: fz(12);
+		@include fz(12);
 		line-height: 1.6;
 		color: #fff;
 

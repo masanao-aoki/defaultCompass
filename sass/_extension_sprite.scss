@@ -4,7 +4,7 @@
 // sprite
 // ----------------------------------------------------------------------
 
-@mixin position($map, $sprite-names,$retina : true,$doubleClass : true) {
+@mixin position($map, $sprite-names,$retina : $isRetina,$doubleClass : true) {
 	$retinaSuport: if($retina, 2, 1);
 	$map : nth($map,1);
 	$spriteName: sprite-map-name($map);
@@ -24,7 +24,7 @@
 	}
 }
 
-@mixin image($map, $sprite-names,$retina : true,$doubleClass : true) {
+@mixin image($map, $sprite-names,$retina : $isRetina,$doubleClass : true) {
 	$names: ();
 	$retinaSuport: if($retina, 2, 1);
 	
@@ -56,7 +56,7 @@
 	}
 }
 
-@mixin images($n, $space : 5px ,$retina : true,$doubleClass : true) {
+@mixin images($n, $space : 5px ,$retina : $isRetina,$doubleClass : true) {
 	$map: sprite-map($n, $spacing: $space);
 	$list: sprite-names($map);
 
