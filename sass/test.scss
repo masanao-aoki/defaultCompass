@@ -17,8 +17,8 @@ $map:sprite-map("sprite/*.png", $spacing: 5px);
 
 .test10 {
 	content: image-info("img5.gif",width);
-	content: golden-ratio(334);
-	content: silver-ratio(224);
+	content: golden-ratio(334px);
+	content: silver-ratio(224%);
 	@include background-fit(("sprite-s943cd9c132.png","img5.gif",linear-gradient(red,#444)),false,('0 0 no-repeat','0 0 no-repeat','0 0 no-repeat'),!important);
 	width: nth($imgWidth,1);
 	height:  nth($imgHeight,1);

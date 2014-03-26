@@ -3,8 +3,11 @@
 //----------------------------------------------------------------------
 // img
 //----------------------------------------------------------------------
-//	background-retina
-//	画像をRetina対応にする
+//	background-fit
+//	画像のサイズを取得しbackground-size,width,heightに入れる
+//	$widthFixedがfalseの場合はwidth,heightを出力しない
+//	$imgには配列で複数画像を指定することが可能（その場合は$valueにpositionとrepeat必須）
+//	※グラデーションも指定できます。
 //
 //	$img: config.rb images_dirで指定した画像（複数画像を指定できます。）
 //	$widthFixed: 画像タグのサイズいっぱいに指定してテキストを消したいとき true
@@ -250,7 +253,7 @@ $fontSizeDefault: 13;
 $fontSizefz: ' ';
 @function fz($size) {
 	$fontSizefz: $size / $fontSizeDefault;
-	@return $fontSizefz * 100#{"%"};
+	@return $fontSizefz * 100%;
 }
 
 @function fs($size, $context, $unit:em){
@@ -262,12 +265,10 @@ $fontSizefz: ' ';
 }
 
 @mixin fz($size) {
-    $rag : ($size / $fontSizeDefault) * 100%;
-    $ceil : ceil($rag);
-    $rem_num : ($size / $fontSizeDefault);
-    $rem : ceil-decimal($rem_num, 2);
-    font-size: #{$ceil};
-    font-size: #{$rem}rem;
+    $rem_num: ($size / $fontSizeDefault);
+    $num: round-decimal($rem_num, 2);
+    font-size: $size * 1px;
+    font-size: #{$num}rem;
 }
 
 //----------------------------------------------------------------------
@@ -279,7 +280,7 @@ $fontSizefz: ' ';
 // $num: 基準にしたい値
 //	@return {Array}
 @function golden-ratio($num) {
-	@return ($num * 1.618, $num * 0.618)
+	@return round($num * 0.618)
 }
 
 //	silver-ratio
@@ -287,16 +288,13 @@ $fontSizefz: ' ';
 // $num: 基準にしたい値
 //	@return {Array}
 @function silver-ratio($num) {
-	@return ($num * 1.414, $num * 0.414)
+	@return round($num * 0.414)
 }
 
 //----------------------------------------------------------------------
 // clearfix
 //----------------------------------------------------------------------
 @mixin clearfix() {
-/*----------------------------------------
-	clearfix
-----------------------------------------*/
 .clearfix {
 	@if $legacy-support-for-ie7 {
 	min-height: 1px;
