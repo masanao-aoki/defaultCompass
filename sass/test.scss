@@ -27,6 +27,15 @@ $map:sprite-map("sprite/*.png", $spacing: 5px);
 	height:  nth($imgHeight,1);
 }
 
+.triangle {
+	margin: 30px;
+	border: 2px solid red;
+	height: 100px;
+	width: 100px;
+	position: relative;
+	@include triangle(30px,red,left);
+}
+
 /*----------------------------------------
 	Selectors 書き方
 ----------------------------------------*/

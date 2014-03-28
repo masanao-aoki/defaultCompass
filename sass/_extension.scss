@@ -223,6 +223,27 @@ $box-shadowList: ' ';
 	@include box-pack(center);
 }
 
+//	triangle
+//	三角形を作る
+$size: '';
+@mixin triangle($num: 10px,$color: black,$dir: top,$position: 50%) {
+	$size: $num / 2;
+	$direction: if($dir == top,bottom,if($dir == bottom,top,if($dir == left,right,if($dir == right,left,''))));
+	&:after {
+		content: "";
+		border: $size solid transparent;
+		border-#{$direction}-color: $color;
+		#{$dir}: -$num;
+		@if($position != false) {
+			#{if($dir == left or $dir == right,top,left)}: $position;
+			@if($position == 50%) {
+				margin-#{if($dir == left or $dir == right,top,left)}: -$size;
+			}
+		}
+		position: absolute;
+	}
+}
+
 //	background-4corners
 //	4つ角に同じ画像を回転・反転させておきたい場合
 @mixin background-4corners($img,$retina: $isRetina) {

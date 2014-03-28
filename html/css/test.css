@@ -74,6 +74,23 @@ header:after {
   height: 245px;
 }
 
+.triangle {
+  margin: 30px;
+  border: 2px solid red;
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+.triangle:after {
+  content: "";
+  border: 15px solid transparent;
+  border-right-color: red;
+  left: -30px;
+  top: 50%;
+  margin-top: -15px;
+  position: absolute;
+}
+
 /*----------------------------------------
 	Selectors 書き方
 ----------------------------------------*/
