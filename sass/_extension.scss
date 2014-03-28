@@ -223,25 +223,37 @@ $box-shadowList: ' ';
 	@include box-pack(center);
 }
 
-//	triangle
-//	三角形を作る
+//	triangle-set
+//	作った三角形を$dirに合わせてボックスの外側にセットする
 $size: '';
-@mixin triangle($num: 10px,$color: black,$dir: top,$position: 50%) {
-	$size: $num / 2;
+@mixin triangle-set($num: 10px 10px,$color: black,$dir: top,$position: 50%,$selecter: after) {
+	$size: nth($num,1) / 2;
+	$h: nth($num,2);
 	$direction: if($dir == top,bottom,if($dir == bottom,top,if($dir == left,right,if($dir == right,left,''))));
-	&:after {
-		content: "";
-		border: $size solid transparent;
-		border-#{$direction}-color: $color;
-		#{$dir}: -$num;
+	&#{':' + $selecter} {
+		@include triangle($num,$color,$dir);
+		#{$dir}: -($size + $h);
+		position: absolute;
 		@if($position != false) {
 			#{if($dir == left or $dir == right,top,left)}: $position;
 			@if($position == 50%) {
 				margin-#{if($dir == left or $dir == right,top,left)}: -$size;
 			}
 		}
-		position: absolute;
 	}
+}
+
+//	triangle
+//	三角形を作る
+@mixin triangle($num: 10px 10px,$color: black,$dir: top) {
+	$size: nth($num,1) / 2;
+	$h: nth($num,2);
+	$direction: if($dir == top,bottom,if($dir == bottom,top,if($dir == left,right,if($dir == right,left,''))));
+	content: "";
+	font-size: 0;
+	border: $size solid transparent;
+	border-#{$direction}-color: $color;
+	border-#{$direction}-width: $h;
 }
 
 //	background-4corners

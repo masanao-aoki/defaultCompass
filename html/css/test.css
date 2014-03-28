@@ -75,7 +75,7 @@ header:after {
 }
 
 .triangle {
-  margin: 30px;
+  margin: 30px auto;
   border: 2px solid red;
   height: 100px;
   width: 100px;
@@ -83,12 +83,14 @@ header:after {
 }
 .triangle:after {
   content: "";
+  font-size: 0;
   border: 15px solid transparent;
   border-right-color: red;
-  left: -30px;
+  border-right-width: 10px;
+  left: -25px;
+  position: absolute;
   top: 50%;
   margin-top: -15px;
-  position: absolute;
 }
 
 /*----------------------------------------

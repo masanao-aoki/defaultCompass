@@ -28,12 +28,12 @@ $map:sprite-map("sprite/*.png", $spacing: 5px);
 }
 
 .triangle {
-	margin: 30px;
+	margin: 30px auto;
 	border: 2px solid red;
 	height: 100px;
 	width: 100px;
 	position: relative;
-	@include triangle(30px,red,left);
+	@include triangle-set(30px 10px,red,left);
 }
 
 /*----------------------------------------
