@@ -86,11 +86,22 @@ header:after {
   font-size: 0;
   border: 15px solid transparent;
   border-right-color: red;
-  border-right-width: 10px;
-  left: -25px;
+  border-right-width: 30px;
+  left: -45px;
   position: absolute;
   top: 50%;
   margin-top: -15px;
+}
+.triangle:before {
+  content: "";
+  font-size: 0;
+  border: 50px solid transparent;
+  border-left-color: red;
+  border-left-width: 100px;
+  right: -150px;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
 }
 
 /*----------------------------------------
