@@ -2,9 +2,12 @@
 
 @import "import";
 
+
+
 header {
 	position: relative;
 	@include background-4corners('sprite/css1.png');
+	@include display-box-center;
 }
 
 $map:sprite-map("sprite/*.png", $spacing: 5px);
@@ -93,9 +96,6 @@ $tmp: "";
 ----------------------------------------*/
 p#gradient {
 	@include background(linear-gradient(left, blue 5%, #6f156c 35%, #fd7c00 65%, #002874 95%));
-	height: 200px;
-	line-height: 200px;
-	text-align: center;
 	font-size: fz(23);
 	color: #fff;
 }

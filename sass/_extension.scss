@@ -139,7 +139,7 @@ $imgHeight: ();
 //	$map: スプライト画像
 //	$name: スプライト画像内のスプライト化する前の画像名
 //	$retina: true or false
-// @return {Array} [スプライト画像の横,スプライト画像の高さ,個別画像の横,個別画像の高さ]
+//	@return {Array} [スプライト画像の横,スプライト画像の高さ,個別画像の横,個別画像の高さ]
 @function spriteSize($map, $name,$retina: $isRetina) {
 	$retinaSuport: if($retina, 2, 1);
 	$map : nth($map,1);
@@ -155,12 +155,12 @@ $imgHeight: ();
 }
 
 //	spritePosition
-// スプライト画像のbackground-position
+//	スプライト画像のbackground-position
 //
 //	$map: スプライト画像
 //	$name: スプライト画像内のスプライト化する前の画像名
 //	$retina: true or false
-// @return {Array} [スプライト画像のy,スプライト画像のx]
+//	@return {Array} [スプライト画像のy,スプライト画像のx]
 @function spritePosition($map, $name,$retina: $isRetina) {
 	$retinaSuport: if($retina, 2, 1);
 	$map : nth($map,1);
@@ -174,8 +174,8 @@ $imgHeight: ();
 //----------------------------------------------------------------------
 // css3
 //----------------------------------------------------------------------
-// min_height
-// 最大の高さ IE6にも対応させたい場合
+//	min_height
+//	最大の高さ IE6にも対応させたい場合
 @mixin min_height($value: 1%) {
 	min-height: $value;
 	@if $legacy-support-for-ie6 {
@@ -183,8 +183,8 @@ $imgHeight: ();
 	}
 }
 
-// inline-block
-// IE6,IE7用 にinline-blockを実装する場合
+//	inline-block
+//	IE6,IE7用 にinline-blockを実装する場合
 @mixin inline-block {
 	display: inline-block;
 	@if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
@@ -213,6 +213,14 @@ $box-shadowList: ' ';
 		$box-shadowList : unquote($box-shadowList + "," + $value);
 	}
 	box-shadow: $box-shadowList;
+}
+
+//	display-box-center
+//	display: box;にし縦横をcenter寄せに
+@mixin display-box-center() {
+	@include display-box;
+	@include box-align(center);
+	@include box-pack(center);
 }
 
 //	background-4corners
