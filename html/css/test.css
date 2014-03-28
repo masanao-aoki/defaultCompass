@@ -1,6 +1,18 @@
 @charset "utf-8";
 header {
   position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-box-pack: center;
+  box-pack: center;
 }
 header:after, header:before {
   content: '';
@@ -60,6 +72,25 @@ header:after {
   background-size: 80px 245px, 5px 5px, auto auto !important;
   width: 80px;
   height: 245px;
+}
+
+.triangle {
+  margin: 30px auto;
+  border: 2px solid red;
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+.triangle:after {
+  content: "";
+  font-size: 0;
+  border: 15px solid transparent;
+  border-right-color: red;
+  border-right-width: 10px;
+  left: -25px;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
 }
 
 /*----------------------------------------
@@ -162,9 +193,6 @@ p#gradient {
   background: -moz-linear-gradient(left, #0000ff 5%, #6f156c 35%, #fd7c00 65%, #002874 95%);
   background: -o-linear-gradient(left, #0000ff 5%, #6f156c 35%, #fd7c00 65%, #002874 95%);
   background: linear-gradient(left, #0000ff 5%, #6f156c 35%, #fd7c00 65%, #002874 95%);
-  height: 200px;
-  line-height: 200px;
-  text-align: center;
   font-size: 176.92308%;
   color: #fff;
 }

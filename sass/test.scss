@@ -2,9 +2,12 @@
 
 @import "import";
 
+
+
 header {
 	position: relative;
 	@include background-4corners('sprite/css1.png');
+	@include display-box-center;
 }
 
 $map:sprite-map("sprite/*.png", $spacing: 5px);
@@ -22,6 +25,15 @@ $map:sprite-map("sprite/*.png", $spacing: 5px);
 	@include background-fit(("sprite-s943cd9c132.png","img5.gif",linear-gradient(red,#444)),false,('0 0 no-repeat','0 0 no-repeat','0 0 no-repeat'),!important);
 	width: nth($imgWidth,1);
 	height:  nth($imgHeight,1);
+}
+
+.triangle {
+	margin: 30px auto;
+	border: 2px solid red;
+	height: 100px;
+	width: 100px;
+	position: relative;
+	@include triangle-set(30px 10px,red,left);
 }
 
 /*----------------------------------------
@@ -93,9 +105,6 @@ $tmp: "";
 ----------------------------------------*/
 p#gradient {
 	@include background(linear-gradient(left, blue 5%, #6f156c 35%, #fd7c00 65%, #002874 95%));
-	height: 200px;
-	line-height: 200px;
-	text-align: center;
 	font-size: fz(23);
 	color: #fff;
 }

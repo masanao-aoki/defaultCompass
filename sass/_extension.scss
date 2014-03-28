@@ -139,7 +139,7 @@ $imgHeight: ();
 //	$map: スプライト画像
 //	$name: スプライト画像内のスプライト化する前の画像名
 //	$retina: true or false
-// @return {Array} [スプライト画像の横,スプライト画像の高さ,個別画像の横,個別画像の高さ]
+//	@return {Array} [スプライト画像の横,スプライト画像の高さ,個別画像の横,個別画像の高さ]
 @function spriteSize($map, $name,$retina: $isRetina) {
 	$retinaSuport: if($retina, 2, 1);
 	$map : nth($map,1);
@@ -155,12 +155,12 @@ $imgHeight: ();
 }
 
 //	spritePosition
-// スプライト画像のbackground-position
+//	スプライト画像のbackground-position
 //
 //	$map: スプライト画像
 //	$name: スプライト画像内のスプライト化する前の画像名
 //	$retina: true or false
-// @return {Array} [スプライト画像のy,スプライト画像のx]
+//	@return {Array} [スプライト画像のy,スプライト画像のx]
 @function spritePosition($map, $name,$retina: $isRetina) {
 	$retinaSuport: if($retina, 2, 1);
 	$map : nth($map,1);
@@ -174,8 +174,8 @@ $imgHeight: ();
 //----------------------------------------------------------------------
 // css3
 //----------------------------------------------------------------------
-// min_height
-// 最大の高さ IE6にも対応させたい場合
+//	min_height
+//	最大の高さ IE6にも対応させたい場合
 @mixin min_height($value: 1%) {
 	min-height: $value;
 	@if $legacy-support-for-ie6 {
@@ -183,8 +183,8 @@ $imgHeight: ();
 	}
 }
 
-// inline-block
-// IE6,IE7用 にinline-blockを実装する場合
+//	inline-block
+//	IE6,IE7用 にinline-blockを実装する場合
 @mixin inline-block {
 	display: inline-block;
 	@if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
@@ -213,6 +213,47 @@ $box-shadowList: ' ';
 		$box-shadowList : unquote($box-shadowList + "," + $value);
 	}
 	box-shadow: $box-shadowList;
+}
+
+//	display-box-center
+//	display: box;にし縦横をcenter寄せに
+@mixin display-box-center() {
+	@include display-box;
+	@include box-align(center);
+	@include box-pack(center);
+}
+
+//	triangle-set
+//	作った三角形を$dirに合わせてボックスの外側にセットする
+$size: '';
+@mixin triangle-set($num: 10px 10px,$color: black,$dir: top,$position: 50%,$selecter: after) {
+	$size: nth($num,1) / 2;
+	$h: nth($num,2);
+	$direction: if($dir == top,bottom,if($dir == bottom,top,if($dir == left,right,if($dir == right,left,''))));
+	&#{':' + $selecter} {
+		@include triangle($num,$color,$dir);
+		#{$dir}: -($size + $h);
+		position: absolute;
+		@if($position != false) {
+			#{if($dir == left or $dir == right,top,left)}: $position;
+			@if($position == 50%) {
+				margin-#{if($dir == left or $dir == right,top,left)}: -$size;
+			}
+		}
+	}
+}
+
+//	triangle
+//	三角形を作る
+@mixin triangle($num: 10px 10px,$color: black,$dir: top) {
+	$size: nth($num,1) / 2;
+	$h: nth($num,2);
+	$direction: if($dir == top,bottom,if($dir == bottom,top,if($dir == left,right,if($dir == right,left,''))));
+	content: "";
+	font-size: 0;
+	border: $size solid transparent;
+	border-#{$direction}-color: $color;
+	border-#{$direction}-width: $h;
 }
 
 //	background-4corners
