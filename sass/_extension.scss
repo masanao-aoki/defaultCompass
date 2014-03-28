@@ -226,9 +226,14 @@ $box-shadowList: ' ';
 //	triangle-set
 //	作った三角形を$dirに合わせてボックスの外側にセットする
 $size: '';
-@mixin triangle-set($num: 10px 10px,$color: black,$dir: top,$position: 50%,$selecter: after) {
+@mixin triangle-set($num: 10px,$color: black,$dir: top,$position: 50%,$selecter: after) {
 	$size: nth($num,1) / 2;
-	$h: nth($num,2);
+	$h: '';
+	@if length($num) == 1 {
+		$h: $num;
+	} @else {
+		$h: nth($num,2);
+	}
 	$direction: if($dir == top,bottom,if($dir == bottom,top,if($dir == left,right,if($dir == right,left,''))));
 	&#{':' + $selecter} {
 		@include triangle($num,$color,$dir);
@@ -247,7 +252,12 @@ $size: '';
 //	三角形を作る
 @mixin triangle($num: 10px 10px,$color: black,$dir: top) {
 	$size: nth($num,1) / 2;
-	$h: nth($num,2);
+	$h: '';
+	@if length($num) == 1 {
+		$h: $num;
+	} @else {
+		$h: nth($num,2);
+	}
 	$direction: if($dir == top,bottom,if($dir == bottom,top,if($dir == left,right,if($dir == right,left,''))));
 	content: "";
 	font-size: 0;
