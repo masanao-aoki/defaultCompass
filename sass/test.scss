@@ -10,6 +10,16 @@ header {
 	@include display-box-center;
 }
 
+.arrow {
+	padding: 20px;
+	margin: 30px;
+	background: blue;
+	height: 20px;
+	position: relative;
+	
+	@include arrow-set(10px,2px,#fff,left);
+}
+
 $map:sprite-map("sprite/*.png", $spacing: 5px);
 .spriteTest li:nth-child(1) {
 	@include sprite-info($map,css2,true);

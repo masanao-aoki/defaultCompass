@@ -34,6 +34,33 @@ header:after {
   -webkit-transform: rotate(-180deg);
 }
 
+.arrow {
+  padding: 20px;
+  margin: 30px;
+  background: blue;
+  height: 20px;
+  position: relative;
+}
+.arrow:after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+}
+
 .spriteTest li:nth-child(1) {
   background-image: url('/html/img/sprite-s943cd9c132.png');
   -webkit-background-size: 80px 245px;
