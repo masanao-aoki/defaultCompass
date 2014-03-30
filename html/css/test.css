@@ -1,53 +1,216 @@
 @charset "utf-8";
-header {
-  position: relative;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-box;
-  display: box;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -ms-box-align: center;
-  box-align: center;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -ms-box-pack: center;
-  box-pack: center;
+#background-fit > p {
+  background: url('/html/img/text.png?1396155926') center 5px no-repeat, url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0icmdiYSgyNTUsIDAsIDAsIDAuMSkiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LCAwLCAwLCAwLjMpIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g') 0 0 no-repeat;
+  background: url('/html/img/text.png?1396155926') center 5px no-repeat, -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 0, 0, 0.1)), color-stop(100%, rgba(255, 0, 0, 0.3))) 0 0 no-repeat;
+  background: url('/html/img/text.png?1396155926') center 5px no-repeat, -webkit-linear-gradient(rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.3)) 0 0 no-repeat;
+  background: url('/html/img/text.png?1396155926') center 5px no-repeat, -moz-linear-gradient(rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.3)) 0 0 no-repeat;
+  background: url('/html/img/text.png?1396155926') center 5px no-repeat, -o-linear-gradient(rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.3)) 0 0 no-repeat;
+  background: url('/html/img/text.png?1396155926') center 5px no-repeat, linear-gradient(rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.3)) 0 0 no-repeat;
+  -webkit-background-size: 327px 29px, auto auto;
+  -moz-background-size: 327px 29px, auto auto;
+  -o-background-size: 327px 29px, auto auto;
+  background-size: 327px 29px, auto auto;
+  height: 39px;
+  text-indent: -9999px;
 }
-header:after, header:before {
+#background-fit section p {
+  background: url('/html/img/text.png?1396155926') center 5px no-repeat, url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0icmdiYSgyNTUsIDAsIDAsIDAuMSkiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LCAwLCAwLCAwLjMpIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g') 0 0 no-repeat;
+  background: url('/html/img/text.png?1396155926') center 5px no-repeat, -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 0, 0, 0.1)), color-stop(100%, rgba(255, 0, 0, 0.3))) 0 0 no-repeat;
+  background: url('/html/img/text.png?1396155926') center 5px no-repeat, -webkit-linear-gradient(rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.3)) 0 0 no-repeat;
+  background: url('/html/img/text.png?1396155926') center 5px no-repeat, -moz-linear-gradient(rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.3)) 0 0 no-repeat;
+  background: url('/html/img/text.png?1396155926') center 5px no-repeat, -o-linear-gradient(rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.3)) 0 0 no-repeat;
+  background: url('/html/img/text.png?1396155926') center 5px no-repeat, linear-gradient(rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.3)) 0 0 no-repeat;
+  -webkit-background-size: 164px 15px, auto auto;
+  -moz-background-size: 164px 15px, auto auto;
+  -o-background-size: 164px 15px, auto auto;
+  background-size: 164px 15px, auto auto;
+  height: 25px;
+  text-indent: -9999px;
+}
+
+#background-4corners p {
+  position: relative;
+  height: 200px;
+  text-align: center;
+}
+#background-4corners p:after, #background-4corners p:before {
   content: '';
   display: block;
-  background: url('/html/img/sprite/css1.png?1393660371') 0 0 no-repeat;
-  background-size: 80px 80px;
+  background: url('/html/img/flower.png?1396156913') 0 0 no-repeat;
+  background-size: 100px 61px;
   width: 50%;
-  height: 80px;
+  height: 61px;
   position: absolute;
   -webkit-box-reflect: right;
+  -moz-box-reflect: right;
 }
-header:before {
+#background-4corners p:before {
   top: 0;
   left: 0;
 }
-header:after {
+#background-4corners p:after {
   right: 0;
   bottom: 0;
   -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
 }
 
-.arrow {
-  padding: 20px;
-  margin: 30px;
-  background: blue;
-  height: 20px;
+#em-width p {
+  margin: 0 auto;
+  margin-bottom: 3.9rem;
+  line-height: 2.3rem;
+  letter-spacing: 0.24rem;
+  color: #500;
+  max-width: 73.6rem;
+  /width: 40;
+}
+
+#sprite-info p {
+  background-image: url('/html/img/num-sce8bc88143.png');
+  -webkit-background-size: 50px 270px;
+  -moz-background-size: 50px 270px;
+  -o-background-size: 50px 270px;
+  background-size: 50px 270px;
+  background-position: 0 0;
+  width: 50px;
+  height: 50px;
+}
+#sprite-info li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+#sprite-info li:nth-child(1) {
+  background-image: url('/html/img/num-sce8bc88143.png');
+  -webkit-background-size: 50px 270px;
+  -moz-background-size: 50px 270px;
+  -o-background-size: 50px 270px;
+  background-size: 50px 270px;
+  background-position: 0 -220px;
+  width: 50px;
+  height: 50px;
+}
+#sprite-info li:nth-child(2) {
+  background-image: url('/html/img/num-sce8bc88143.png');
+  -webkit-background-size: 50px 270px;
+  -moz-background-size: 50px 270px;
+  -o-background-size: 50px 270px;
+  background-size: 50px 270px;
+  background-position: 0 -110px;
+  width: 50px;
+  height: 50px;
+}
+#sprite-info li:nth-child(3) {
+  background-image: url('/html/img/num-sce8bc88143.png');
+  -webkit-background-size: 50px 270px;
+  -moz-background-size: 50px 270px;
+  -o-background-size: 50px 270px;
+  background-size: 50px 270px;
+  background-position: 0 0;
+  width: 50px;
+  height: 50px;
+}
+#sprite-info li:nth-child(4) {
+  background-image: url('/html/img/num-sce8bc88143.png');
+  -webkit-background-size: 50px 270px;
+  -moz-background-size: 50px 270px;
+  -o-background-size: 50px 270px;
+  background-size: 50px 270px;
+  background-position: 0 -165px;
+  width: 50px;
+  height: 50px;
+}
+#sprite-info li:nth-child(5) {
+  background-image: url('/html/img/num-sce8bc88143.png');
+  -webkit-background-size: 50px 270px;
+  -moz-background-size: 50px 270px;
+  -o-background-size: 50px 270px;
+  background-size: 50px 270px;
+  background-position: 0 -55px;
+  width: 50px;
+  height: 50px;
+}
+
+#triangle li {
+  float: left;
+}
+#triangle li:nth-child(1) {
+  content: "";
+  font-size: 0;
+  border: 10px solid transparent;
+  border-bottom-color: red;
+  border-bottom-width: 20px;
+}
+#triangle li:nth-child(2) {
+  content: "";
+  font-size: 0;
+  border: 10px solid transparent;
+  border-left-color: green;
+  border-left-width: 20px;
+}
+#triangle li:nth-child(3) {
+  content: "";
+  font-size: 0;
+  border: 10px solid transparent;
+  border-top-color: pink;
+  border-top-width: 20px;
+}
+#triangle li:nth-child(4) {
+  content: "";
+  font-size: 0;
+  border: 10px solid transparent;
+  border-right-color: purple;
+  border-right-width: 20px;
+}
+#triangle p {
+  margin: 30px auto;
+  border: 2px solid #39c;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  background: #fff;
+  -webkit-filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.5));
+}
+#triangle p:after {
+  content: "";
+  font-size: 0;
+  border: 15px solid transparent;
+  border-top-color: #3399cc;
+  border-top-width: 20px;
+  bottom: -35px;
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+}
+#triangle p:before {
+  content: "";
+  font-size: 0;
+  border: 25px solid transparent;
+  border-bottom-color: #3399cc;
+  border-bottom-width: 20px;
+  top: -45px;
+  position: absolute;
+  left: 50%;
+  margin-left: -25px;
+}
+
+#arrow li {
+  padding: 0.3em;
+  margin-bottom: 0.3em;
+  background: #333;
+  color: #fff;
   position: relative;
 }
-.arrow:after {
+#arrow li:nth-child(1):after {
   content: '';
   display: block;
   width: 10px;
   height: 10px;
-  border-top: 2px solid white;
-  border-left: 2px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -60,494 +223,65 @@ header:after {
   top: 50%;
   margin-top: -5px;
 }
-
-.spriteTest li:nth-child(1) {
-  background-image: url('/html/img/sprite-s943cd9c132.png');
-  -webkit-background-size: 80px 245px;
-  -moz-background-size: 80px 245px;
-  -o-background-size: 80px 245px;
-  background-size: 80px 245px;
-  background-position: 0 -83px;
-  width: 80px;
-  height: 80px;
-}
-
-.spriteTest li:nth-child(2) {
-  background-image: url('/html/img/sprite-s943cd9c132.png');
-  -webkit-background-size: 80px 245px;
-  -moz-background-size: 80px 245px;
-  -o-background-size: 80px 245px;
-  background-size: 80px 245px;
-  background-position: 0 0;
-  width: 80px;
-  height: 80px;
-}
-
-.test10 {
-  content: 5px;
-  content: 206px;
-  content: 93%;
-  background: url('/html/img/sprite-s943cd9c132.png?1393660371') 0 0 no-repeat, url('/html/img/img5.gif?1393660371') 0 0 no-repeat, url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmMDAwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzQ0NDQ0NCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==') 0 0 no-repeat !important;
-  background: url('/html/img/sprite-s943cd9c132.png?1393660371') 0 0 no-repeat, url('/html/img/img5.gif?1393660371') 0 0 no-repeat, -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff0000), color-stop(100%, #444444)) 0 0 no-repeat !important;
-  background: url('/html/img/sprite-s943cd9c132.png?1393660371') 0 0 no-repeat, url('/html/img/img5.gif?1393660371') 0 0 no-repeat, -webkit-linear-gradient(#ff0000, #444444) 0 0 no-repeat !important;
-  background: url('/html/img/sprite-s943cd9c132.png?1393660371') 0 0 no-repeat, url('/html/img/img5.gif?1393660371') 0 0 no-repeat, -moz-linear-gradient(#ff0000, #444444) 0 0 no-repeat !important;
-  background: url('/html/img/sprite-s943cd9c132.png?1393660371') 0 0 no-repeat, url('/html/img/img5.gif?1393660371') 0 0 no-repeat, -o-linear-gradient(#ff0000, #444444) 0 0 no-repeat !important;
-  background: url('/html/img/sprite-s943cd9c132.png?1393660371') 0 0 no-repeat, url('/html/img/img5.gif?1393660371') 0 0 no-repeat, linear-gradient(#ff0000, #444444) 0 0 no-repeat !important;
-  -webkit-background-size: 80px 245px, 5px 5px, auto auto !important;
-  -moz-background-size: 80px 245px, 5px 5px, auto auto !important;
-  -o-background-size: 80px 245px, 5px 5px, auto auto !important;
-  background-size: 80px 245px, 5px 5px, auto auto !important;
-  width: 80px;
-  height: 245px;
-}
-
-.triangle {
-  margin: 30px auto;
-  border: 2px solid red;
-  height: 100px;
-  width: 100px;
-  position: relative;
-}
-.triangle:after {
-  content: "";
-  font-size: 0;
-  border: 15px solid transparent;
-  border-right-color: red;
-  border-right-width: 30px;
-  left: -45px;
-  position: absolute;
-  top: 50%;
-  margin-top: -15px;
-}
-.triangle:before {
-  content: "";
-  font-size: 0;
-  border: 50px solid transparent;
-  border-left-color: red;
-  border-left-width: 100px;
-  right: -150px;
-  position: absolute;
-  top: 50%;
-  margin-top: -50px;
-}
-
-/*----------------------------------------
-	Selectors 書き方
-----------------------------------------*/
-ul {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 2px solid pink;
-  background-color: #fff;
-}
-ul[class^=num] li {
-  padding: 0.2em 0.5em;
-  font-size: 92.30769%;
-  font-size: 12px;
-  font-size: 0.92rem;
-  line-height: 1.6;
-  color: #fff;
-}
-ul[class^=num] li:nth-child(even) {
-  background-color: #0CC;
-}
-ul[class^=num] li:nth-child(odd) {
-  background-color: orange;
-}
-ul.num3 li:nth-child(even) {
-  background-color: green;
-}
-ul.num3 li:nth-child(odd) {
-  background-color: pink;
-}
-ul.num1:after {
-  content: ":afterで追加したテキスト1";
-}
-ul.num2:after {
-  content: ":afterで追加したテキスト2";
-}
-ul.num3:after {
-  content: ":afterで追加したテキスト3";
-}
-ul.num4:after {
-  content: ":afterで追加したテキスト4";
-}
-ul li:hover {
-  background-color: green;
-}
-
-/*----------------------------------------
-	for文で繰り返し
-----------------------------------------*/
-/* 通常 */
-.item1 {
-  background-image: url(images/test1);
-}
-
-.item2 {
-  background-image: url(images/test2);
-}
-
-.item3 {
-  background-image: url(images/test3);
-}
-
-.item4 {
-  background-image: url(images/test4);
-}
-
-.item5 {
-  background-image: url(images/test5);
-}
-
-/* 先頭に0を付ける */
-.item01 {
-  background-image: url(images/test01);
-}
-
-.item02 {
-  background-image: url(images/test02);
-}
-
-.item03 {
-  background-image: url(images/test03);
-}
-
-.item04 {
-  background-image: url(images/test04);
-}
-
-.item05 {
-  background-image: url(images/test05);
-}
-
-/*----------------------------------------
-	グラデーション
-----------------------------------------*/
-p#gradient {
-  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iNTAlIiB4Mj0iMTAwJSIgeTI9IjUwJSI+PHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iIzAwMDBmZiIvPjxzdG9wIG9mZnNldD0iMzUlIiBzdG9wLWNvbG9yPSIjNmYxNTZjIi8+PHN0b3Agb2Zmc2V0PSI2NSUiIHN0b3AtY29sb3I9IiNmZDdjMDAiLz48c3RvcCBvZmZzZXQ9Ijk1JSIgc3RvcC1jb2xvcj0iIzAwMjg3NCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(5%, #0000ff), color-stop(35%, #6f156c), color-stop(65%, #fd7c00), color-stop(95%, #002874));
-  background: -webkit-linear-gradient(left, #0000ff 5%, #6f156c 35%, #fd7c00 65%, #002874 95%);
-  background: -moz-linear-gradient(left, #0000ff 5%, #6f156c 35%, #fd7c00 65%, #002874 95%);
-  background: -o-linear-gradient(left, #0000ff 5%, #6f156c 35%, #fd7c00 65%, #002874 95%);
-  background: linear-gradient(left, #0000ff 5%, #6f156c 35%, #fd7c00 65%, #002874 95%);
-  font-size: 176.92308%;
-  color: #fff;
-}
-
-/*----------------------------------------
-	extend 出力するcssを分けている場合は
-	他のcssに大してはextend出来ないみたいです。
-----------------------------------------*/
-p.common, .test {
-  margin: 0;
-  padding: 0;
-}
-
-.test {
-  width: 5px;
-  height: 5px 5px;
-}
-
-/*----------------------------------------
-	font-size pxを%に変換
-----------------------------------------*/
-.test {
-  font-size: 92.30769%;
-}
-
-.test {
-  font-size: 230.76923%;
-}
-
-/* 8以下は8になるよ */
-.test {
-  font-size: 7.69231%;
-}
-
-/* 40以上は40になるよ */
-.test {
-  font-size: 769.23077%;
-}
-
-/*----------------------------------------
-	fs(目的のサイズ,継承したサイズ)
-	小数点以下は3桁
-----------------------------------------*/
-.test {
-  font-size: 1.15385em;
-}
-
-.test {
-  font-size: 115.38462%;
-}
-
-/*----------------------------------------
-	css3
-----------------------------------------*/
-.test {
-  height: 100px;
-  background: red;
-  text-align: center;
-  /* 関数で 値を指定 */
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
-  width: 940px;
-  /* opacity */
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-  opacity: 0.8;
-  /* min-height */
-  min-height: 100px;
-  _height: 100px;
-  /* inline-block */
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  /* box-sizing */
+#arrow li:nth-child(2):after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  /* border-radius */
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  -ms-border-radius: 100px;
-  -o-border-radius: 100px;
-  border-radius: 100px;
-  /* background-size */
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-size: contain;
-  /* box-shadow */
-  -webkit-box-shadow: 1px 1px 3px blue, 1px 1px 3px blue, 1px 1px 3px blue;
-  -moz-box-shadow: 1px 1px 3px blue, 1px 1px 3px blue, 1px 1px 3px blue;
-  box-shadow: 1px 1px 3px blue, 1px 1px 3px blue, 1px 1px 3px blue;
-  /* text-shadow */
-  text-shadow: rgba(0, 0, 255, 0.2) 1px 1px 0, rgba(0, 0, 255, 0.2) 2px 2px 0, rgba(0, 0, 255, 0.2) 3px 3px 0;
-  /* 同じtext-shadowを繰り返したい場合 */
-  text-shadow: 0 0 2px white,0 0 2px white,0 0 2px white,0 0 2px white,0 0 2px white,0 0 2px white,0 0 2px white,0 0 2px white,0 0 2px white,0 0 2px white,0 0 2px white,0 0 2px white,0 0 2px white,0 0 2px white,0 0 2px white;
-  /* transition */
-  -webkit-transition: margin-left 0.25s ease-out, padding 0.25s ease-out;
-  -moz-transition: margin-left 0.25s ease-out, padding 0.25s ease-out;
-  -o-transition: margin-left 0.25s ease-out, padding 0.25s ease-out;
-  transition: margin-left 0.25s ease-out, padding 0.25s ease-out;
-  -webkit-transition: all 0.25s ease-out;
-  -moz-transition: all 0.25s ease-out;
-  -o-transition: all 0.25s ease-out;
-  transition: all 0.25s ease-out;
-  /* transition単品で transformを指定した場合ベンダーフィックスがつかない */
-  -webkit-transition: -webkit-transform 0.25s ease-out;
-  -moz-transition: -moz-transform 0.25s ease-out;
-  -o-transition: -o-transform 0.25s ease-out;
-  transition: transform 0.25s ease-out;
-  /* 単独だとつきます */
-  -webkit-transition-property: -webkit-transform;
-  -moz-transition-property: -moz-transform;
-  -o-transition-property: -o-transform;
-  transition-property: transform;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-delay: 0.1s;
-  -moz-transition-delay: 0.1s;
-  -o-transition-delay: 0.1s;
-  transition-delay: 0.1s;
-  -webkit-transition-timing-function: ease-in;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-  /* transform βのようです。 */
-  -webkit-transform: rotate(720deg);
-  -moz-transform: rotate(720deg);
-  -ms-transform: rotate(720deg);
-  -o-transform: rotate(720deg);
-  transform: rotate(720deg);
-  -webkit-transform: perspective(800px) rotate3d(1, 5, 5, 10deg);
-  -moz-transform: perspective(800px) rotate3d(1, 5, 5, 10deg);
-  -ms-transform: perspective(800px) rotate3d(1, 5, 5, 10deg);
-  -o-transform: perspective(800px) rotate3d(1, 5, 5, 10deg);
-  transform: perspective(800px) rotate3d(1, 5, 5, 10deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
-.test:hover {
-  -webkit-transform:  rotate3d(3, 40, -200, 10deg);
-  -moz-transform:  rotate3d(3, 40, -200, 10deg);
-  -ms-transform:  rotate3d(3, 40, -200, 10deg);
-  -o-transform:  rotate3d(3, 40, -200, 10deg);
-  transform:  rotate3d(3, 40, -200, 10deg);
+#arrow li:nth-child(3):after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+#arrow li:nth-child(4):after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+#arrow li:after {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -5px;
 }
 
-/*----------------------------------------
-	MediaQuery
-	そのなかのクラスにextendすることもできみたい。
-----------------------------------------*/
-.media {
-  width: 320px;
-}
-
-@media screen and (max-width: 479px) {
-  .media2, .media {
-    width: 320px;
-  }
-}
-@media screen and (min-width: 480px) {
-  .media2, .media {
-    width: 480px;
-  }
-}
-
-/*----------------------------------------
-	アニメーション
-----------------------------------------*/
-p.test2:hover {
-  -webkit-animation-name: anime1;
-  -moz-animation-name: anime1;
-  -ms-animation-name: anime1;
-  -o-animation-name: anime1;
-  animation-name: anime1;
-  -webkit-animation-duration: 5s;
-  -moz-animation-duration: 5s;
-  -ms-animation-duration: 5s;
-  -o-animation-duration: 5s;
-  animation-duration: 5s;
-  -webkit-animation-timing-function: ease;
-  -moz-animation-timing-function: ease;
-  -ms-animation-timing-function: ease;
-  -o-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -ms-animation-iteration-count: infinite;
-  -o-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-/* keyframe */
-@-webkit-keyframes anime1 {
-  0% {
-    -webkit-transform: rotate(720deg);
-    -moz-transform: rotate(720deg);
-    -ms-transform: rotate(720deg);
-    -o-transform: rotate(720deg);
-    transform: rotate(720deg);
-  }
-
-  100% {
-    width: 500px;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-}
-
-@-moz-keyframes anime1 {
-  0% {
-    -webkit-transform: rotate(720deg);
-    -moz-transform: rotate(720deg);
-    -ms-transform: rotate(720deg);
-    -o-transform: rotate(720deg);
-    transform: rotate(720deg);
-  }
-
-  100% {
-    width: 500px;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-}
-
-@-o-keyframes anime1 {
-  0% {
-    -webkit-transform: rotate(720deg);
-    -moz-transform: rotate(720deg);
-    -ms-transform: rotate(720deg);
-    -o-transform: rotate(720deg);
-    transform: rotate(720deg);
-  }
-
-  100% {
-    width: 500px;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-}
-
-@-ms-keyframes anime1 {
-  0% {
-    -webkit-transform: rotate(720deg);
-    -moz-transform: rotate(720deg);
-    -ms-transform: rotate(720deg);
-    -o-transform: rotate(720deg);
-    transform: rotate(720deg);
-  }
-
-  100% {
-    width: 500px;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes anime1 {
-  0% {
-    -webkit-transform: rotate(720deg);
-    -moz-transform: rotate(720deg);
-    -ms-transform: rotate(720deg);
-    -o-transform: rotate(720deg);
-    transform: rotate(720deg);
-  }
-
-  100% {
-    width: 500px;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-}
-
-/*----------------------------------------
-	sassの機能
-----------------------------------------*/
-.test2 {
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 230.76923%;
-  letter-spacing: -0.1em;
-  background-color: #7f007f;
-  color: #ff7f00;
-  width: 33.33333%;
-  width: 33%;
-  width: 34%;
-  width: 33%;
-  width: 300px;
-  -webkit-transition-property: color;
-  -moz-transition-property: color;
-  -o-transition-property: color;
-  transition-property: color;
-  height: 300px;
-  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAzMDMwMyIvPjxzdG9wIG9mZnNldD0iNDklIiBzdG9wLWNvbG9yPSIjMzczNzM3Ii8+PHN0b3Agb2Zmc2V0PSI0OSUiIHN0b3AtY29sb3I9IiMzYzNjM2MiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0MjQyNDIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #030303), color-stop(49%, #373737), color-stop(49%, #3c3c3c), color-stop(100%, #424242));
-  background: -webkit-linear-gradient(top, #030303 0%, #373737 49%, #3c3c3c 49%, #424242 100%);
-  background: -moz-linear-gradient(top, #030303 0%, #373737 49%, #3c3c3c 49%, #424242 100%);
-  background: -o-linear-gradient(top, #030303 0%, #373737 49%, #3c3c3c 49%, #424242 100%);
-  background: linear-gradient(top, #030303 0%, #373737 49%, #3c3c3c 49%, #424242 100%);
-  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZTZlNiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e6e6e6), color-stop(100%, #ffffff));
-  background: -webkit-linear-gradient(top, #e6e6e6 0%, #ffffff 100%);
-  background: -moz-linear-gradient(top, #e6e6e6 0%, #ffffff 100%);
-  background: -o-linear-gradient(top, #e6e6e6 0%, #ffffff 100%);
-  background: linear-gradient(top, #e6e6e6 0%, #ffffff 100%);
+#shadow-repeat p {
+  padding: 1em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 3px black,0 0 3px black,0 0 3px black,0 0 3px black,0 0 3px black;
+  box-shadow: 0 0 10px #3399cc,0 0 10px #3399cc,0 0 10px #3399cc,0 0 10px #3399cc,0 0 10px #3399cc,0 0 10px #3399cc,0 0 10px #3399cc,0 0 10px #3399cc,0 0 10px #3399cc,0 0 10px #3399cc;
 }

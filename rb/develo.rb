@@ -6,15 +6,18 @@ module Develo
 		Sass::Script::String.new(FileTest.exist?(path).to_s)
     end
 
-	def fileList(fileName)
+	def fileList(dir,isDir = true)
 		array = []
-		dirs = Dir.glob(fileName.value)
+		dirs = Dir.glob(dir.value)
 		dirs.each_with_index do |li,i|
-			if i == 0 || li.is_a?(Sass::Script::Color) then
-				array.push(li)
+			
+			if isDir == true then
+				file = li
 			else
-				array[i-1] = Sass::Script::String.new("#{array[i-1]}#{li}")
+				file = File.basename(li)
 			end
+			
+			array[i] = Sass::Script::String.new("#{file}")
 		end
 		Sass::Script::List.new(array,',')
 	end

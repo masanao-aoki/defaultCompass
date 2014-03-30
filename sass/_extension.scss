@@ -121,6 +121,7 @@ $imgHeight: ();
 //
 //	$map: スプライト画像
 //	$name: スプライト画像内のスプライト化する前の画像名
+//	$size: サイズを出力するか
 //	$retina: true or false
 @mixin sprite-info($map, $name, $size: true, $retina: $isRetina) {
 	background-image: image-url(sprite-path($map), false, false);
@@ -176,7 +177,7 @@ $imgHeight: ();
 //----------------------------------------------------------------------
 //	min_height
 //	最大の高さ IE6にも対応させたい場合
-@mixin min_height($value: 1%) {
+@mixin min-height($value: 1%) {
 	min-height: $value;
 	@if $legacy-support-for-ie6 {
 	_height: $value;
@@ -300,7 +301,6 @@ $size: '';
 	$retinaSuport: if($retina, 2, 1);
 	$width: round(image-width($img) / $retinaSuport);
 	$height: round(image-height($img) / $retinaSuport);
-	
 	&:after,
 	&:before {
 		content: '';
@@ -311,6 +311,7 @@ $size: '';
 		height: $height;
 		position: absolute;
 		-webkit-box-reflect: right;
+		-moz-box-reflect: right;
 	}
 	
 	&:before {
@@ -321,21 +322,19 @@ $size: '';
 	&:after {
     	right: 0;
     	bottom: 0;
-		-webkit-transform:rotate(-180deg);
+		@include rotate(-180deg);
 	}
 }
 
 //----------------------------------------------------------------------
 // font-size
 //----------------------------------------------------------------------
-$fontSizeDefault: 13;
-$fontSizefz: ' ';
 @function fz($size) {
 	$fontSizefz: $size / $fontSizeDefault;
 	@return $fontSizefz * 100%;
 }
 
-@function fs($size, $context, $unit:em){
+@function fs($size, $context: $fontSizeDefault, $unit:rem){
 	@if $unit == '%' {
 		@return #{$size/$context*100}#{$unit};
 	} @else {
@@ -350,6 +349,13 @@ $fontSizefz: ' ';
     font-size: #{$num}rem;
 }
 
+@mixin em-width($em,$letter-spacing: 0,$size: 16) {
+	max-width: fs($em * ($size + $letter-spacing));
+	@if $legacy-support-for-ie7 {
+		#{"/"}width: $em;
+	}
+};
+
 //----------------------------------------------------------------------
 // ratio 黄金比 白銀比の計算
 //----------------------------------------------------------------------
@@ -359,7 +365,7 @@ $fontSizefz: ' ';
 //	$num: 基準にしたい値
 //	@return {Array}
 @function golden-ratio($num) {
-	@return round($num * 0.618)
+	@return round($num * 1.618)
 }
 
 //	silver-ratio
@@ -367,7 +373,7 @@ $fontSizefz: ' ';
 //	$num: 基準にしたい値
 //	@return {Array}
 @function silver-ratio($num) {
-	@return round($num * 0.414)
+	@return round($num * 1.414)
 }
 
 //----------------------------------------------------------------------

@@ -15,6 +15,7 @@ date : 2012-2
 
 
 /* Don't Edit */
+html {font-size:fs($fontSizeDefault,16,'%');} 
 body {font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}table {font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}html>/**/body {font-size/*\**/: small\9;}
 
 * {
@@ -22,11 +23,11 @@ body {font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-
 	padding: 0;
 	
 	font: {
-		size: fz(13);
 		weight: normal;
 		style: normal;
 		family: $fontFamily;
 	}
+	@include fz(13);
 }
 
 body {
@@ -53,31 +54,34 @@ p,
 pre,
 address {
 	color: $textColor;
-	font-size: fz(13);
+	@include fz(16);
+}
+
+h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-	font-size: fz(18);
+	@include fz(18);
 }
 
 h2 {
-	font-size: fz(16);
+	@include fz(18);
 }
 
 h3 {
-	font-size: fz(14);
+	@include fz(16);
 }
 
 h4 {
-	font-size: fz(13);
+	@include fz(14);
 }
 
 h5 {
-	font-size: fz(12);
+	@include fz(12);
 }
 
 h6 {
-	font-size: fz(11);
+	@include fz(12);
 }
 
 pre {
@@ -194,7 +198,7 @@ dl {
 li,
 dt,
 dd {
-	font-size: 100%;
+	@include fz(16);
 	list-style-type: none;
 	list-style-position: outside;
 }
