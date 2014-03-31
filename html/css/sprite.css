@@ -1,56 +1,40 @@
 @charset "utf-8";
-.sprite.css1, .sprite.css2, .sprite.css3 {
+.num.img1, .num.img2, .num.img3, .num.img4, .num.img5 {
   display: block;
-  background-image: url('/html/img/sprite-s943cd9c132.png');
+  background-image: url('/html/img/num-sce8bc88143.png');
   background-repeat: no-repeat;
-  -webkit-background-size: 80px 245px;
-  -moz-background-size: 80px 245px;
-  -o-background-size: 80px 245px;
-  background-size: 80px 245px;
+  -webkit-background-size: 50px 270px;
+  -moz-background-size: 50px 270px;
+  -o-background-size: 50px 270px;
+  background-size: 50px 270px;
 }
 
-.sprite.css1 {
-  background-position: 0 -165px;
-  width: 80px;
-  height: 80px;
+.num.img1 {
+  background-position: 0 -220px;
+  width: 50px;
+  height: 50px;
 }
 
-.sprite.css2 {
-  background-position: 0 -83px;
-  width: 80px;
-  height: 80px;
+.num.img2 {
+  background-position: 0 -110px;
+  width: 50px;
+  height: 50px;
 }
 
-.sprite.css3 {
+.num.img3 {
   background-position: 0 0;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 }
 
-.sprite2.css1, .sprite2.css2, .sprite2.css3 {
-  display: block;
-  background-image: url('/html/img/sprite2-s7c6e23ec50.png');
-  background-repeat: no-repeat;
-  -webkit-background-size: 80px 245px;
-  -moz-background-size: 80px 245px;
-  -o-background-size: 80px 245px;
-  background-size: 80px 245px;
-}
-
-.sprite2.css1 {
+.num.img4 {
   background-position: 0 -165px;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 }
 
-.sprite2.css2 {
-  background-position: 0 -83px;
-  width: 80px;
-  height: 80px;
-}
-
-.sprite2.css3 {
-  background-position: 0 0;
-  width: 80px;
-  height: 80px;
+.num.img5 {
+  background-position: 0 -55px;
+  width: 50px;
+  height: 50px;
 }
