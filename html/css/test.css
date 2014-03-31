@@ -42,7 +42,6 @@
   height: 61px;
   position: absolute;
   -webkit-box-reflect: right;
-  -moz-box-reflect: right;
 }
 #background-4corners p:before {
   top: 0;
