@@ -5,7 +5,7 @@ $images_dir: "html/img/";
 //HTML5の場合は「true」
 $html5: true;
 //Retina対応
-$isRetina: true;
+$isRetina: false;
 
 //compass ブラウザサポート
 $legacy-support-for-ie6: true;
@@ -20,11 +20,13 @@ $experimental-support-for-khtml: false;
 //ie9用 svg
 $experimental-support-for-svg: true;
 
-//標準font-family
+
+//font-
+$fontSizeDefault: 10;
 $fontFamily: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
 
 //ページの横幅
-$baseWidth: 940px;
+$baseWidth: 80%;
 
 //標準テキストカラー
 $textColor: #333;

@@ -10,6 +10,10 @@ date : 2012-2
 + Others
 */
 /* Don't Edit */
+html {
+  font-size: 62.5%;
+}
+
 body {
   font: 13px/1.231 arial,helvetica,clean,sans-serif;
   *font-size: small;
@@ -34,10 +38,11 @@ html > body {
 * {
   margin: 0;
   padding: 0;
-  font-size: 100%;
   font-weight: normal;
   font-style: normal;
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+  font-size: 13px;
+  font-size: 1.3rem;
 }
 
 body {
@@ -61,31 +66,38 @@ p,
 pre,
 address {
   color: #333333;
-  font-size: 100%;
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 h1 {
-  font-size: 138.46154%;
+  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 h2 {
-  font-size: 123.07692%;
+  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 h3 {
-  font-size: 107.69231%;
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 h4 {
-  font-size: 100%;
+  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 h5 {
-  font-size: 92.30769%;
+  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 h6 {
-  font-size: 84.61538%;
+  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 pre {
@@ -119,7 +131,7 @@ blockquote[cite]::after {
   content: attr(cite);
   display: block;
   text-align: right;
-  font-size: 84.61538%;
+  font-size: 110.0%;
 }
 
 blockquote * {
@@ -192,7 +204,8 @@ dl {
 li,
 dt,
 dd {
-  font-size: 100%;
+  font-size: 16px;
+  font-size: 1.6rem;
   list-style-type: none;
   list-style-position: outside;
 }
